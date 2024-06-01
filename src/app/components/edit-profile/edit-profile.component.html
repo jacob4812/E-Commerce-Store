@@ -1,0 +1,34 @@
+<div class="edit-profile-container">
+    <div class="edit-profile-form">
+      <h2>Edit Profile</h2>
+      <form [formGroup]="editProfileForm" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" formControlName="name" placeholder="Enter your name">
+          <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="error-message">
+            <div *ngIf="name?.errors?.['required']">Name is required.</div>
+            <div *ngIf="name?.errors?.['minlength']">Name must be at least 3 characters long.</div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="currentPassword">Current Password</label>
+          <input type="password" id="currentPassword" formControlName="currentPassword" placeholder="Enter your current password">
+          <div *ngIf="currentPassword?.invalid && (currentPassword?.dirty || currentPassword?.touched)" class="error-message">
+            <div *ngIf="currentPassword?.errors?.['required']">Current password is required.</div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="newPassword">New Password</label>
+          <input type="password" id="newPassword" formControlName="newPassword" placeholder="Enter your new password (optional)">
+          <div *ngIf="newPassword?.invalid && (newPassword?.dirty || newPassword?.touched)" class="error-message">
+            <div *ngIf="newPassword?.errors?.['minlength']">New password must be at least 6 characters long.</div>
+          </div>
+        </div>
+        <div class="button-group">
+          <button type="submit">Save Changes</button>
+          <button type="button" (click)="onDeleteAccount()">Delete Account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

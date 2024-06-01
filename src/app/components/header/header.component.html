@@ -1,0 +1,85 @@
+<mat-toolbar class="justify-between max-w-7xl mx-auto border-x">
+  <a routerLink="home">E-commerce Shop</a>
+  <div class="flex items-center">
+  
+    <button mat-icon-button [matMenuTriggerFor]="cartMenu">
+      <mat-icon
+        [matBadge]="itemsQuantity"
+        [matBadgeHidden]="!itemsQuantity"
+        matBadgeColor="warn"
+      >shopping_cart</mat-icon>
+    </button>
+
+  
+    <button mat-icon-button [matMenuTriggerFor]="userMenu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </div>
+
+  
+  <mat-menu #cartMenu="matMenu">
+    <div class="p-3 divide-y divide-solid">
+      <div class="pb-3 flex justify-between">
+        <span class="mr-16">{{ cart.items.length }} items</span>
+        <a routerLink="cart">View Cart</a>
+      </div>
+      <div *ngIf="cart.items.length" class="py-3">
+        <div
+          *ngFor="let item of cart.items"
+          class="flex justify-between font-light mb-2"
+        >
+          {{ item.name }} x {{ item.quantity }}
+          <span class="font-bold not-italic">{{ item.price | currency }}</span>
+        </div>
+      </div>
+      <div class="flex justify-between py-3 font-light">
+        Total:
+        <span class="font-bold not-italic">{{ getTotal(cart.items) | currency }}</span>
+      </div>
+      <div class="pt-3 flex justify-between">
+        <button
+          (click)="onClearCart()"
+          class="bg-rose-600 text-white rounded-full w-9 h-9"
+        >
+          <mat-icon>remove_shopping_cart</mat-icon>
+        </button>
+        <button
+          routerLink="cart"
+          class="bg-green-600 text-white rounded-full w-9 h-9"
+        >
+          <mat-icon>shopping_cart_checkout</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-menu>
+
+
+  <mat-menu #userMenu="matMenu">
+    <ng-container *ngIf="getisLoggedIn(); else loggedOut">
+      <div class="p-3">
+        <div class="flex items-center mb-3">
+          <mat-icon class="user-img">account_circle</mat-icon>
+          <span class="username">{{ getUserName() }}</span>
+          <mat-icon  routerLink="edit" class="edit" (click)="edit()">edit</mat-icon>
+        </div>
+        <button mat-menu-item class="logout" (click)="onLogout()">
+          <mat-icon class="logout">logout</mat-icon>
+          Logout
+        </button>
+      </div>
+    </ng-container>
+    <ng-template #loggedOut>
+      <div class="p-3">
+        <button mat-menu-item class="logout" routerLink="login">
+          <mat-icon class="login">login</mat-icon>
+          Login
+        </button>
+        <button mat-menu-item class="logout" routerLink="register">
+          <mat-icon class="afterlogout">person_add</mat-icon>
+          Register
+          
+        </button>
+      </div>
+    </ng-template>
+  </mat-menu>
+</mat-toolbar>

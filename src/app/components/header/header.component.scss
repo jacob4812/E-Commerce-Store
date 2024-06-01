@@ -1,0 +1,38 @@
+.mat-icon.user-img {
+    margin-left: 7px;
+  }
+
+.username{
+    margin-top: 4px;
+}
+.flex.items-center.mb-3{
+    display: flex;
+    gap: 8px;
+}
+.mat-menu-item{
+    display: flex;
+    align-items: center !important;
+    gap: 7px;
+    margin-left: -8px;
+}
+.mat-icon.logout{
+    margin-right: 0px !important;
+    display: inline-table;
+}
+.mat-icon.afterlogout{
+    margin-right: 0px !important;
+    display: inline-table;
+}
+.mat-icon.edit{
+    margin-right: 5px !important;
+    cursor: pointer;
+}
+.mat-menu-item.logout{
+    display: flex;
+    align-items: center !important;
+    gap: 7px;
+    margin-left: -8px;
+}
+.mat-icon.login {
+    margin-right: 0px !important;
+  }

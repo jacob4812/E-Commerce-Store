@@ -1,0 +1,28 @@
+<!-- login.component.html -->
+
+<div class="login-container">
+    <div class="login-form">
+      <h2>Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" formControlName="email" placeholder="Enter your email">
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error-message">
+            <div *ngIf="email?.errors?.['required']">email is required.</div>
+            <div *ngIf="email?.errors?.['minlength']">Name must be at least 3 characters long.</div>
+        </div>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" formControlName="password" placeholder="Enter your password">
+          <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error-message">
+            <div *ngIf="password?.errors?.['required']">Password is required.</div>
+        </div>
+        </div>
+        <div class="button-group">
+          <button type="submit">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
