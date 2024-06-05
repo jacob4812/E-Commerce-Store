@@ -13,12 +13,15 @@ import { jwtDecode } from 'jwt-decode';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   errorMessage: string | null = null;
-
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router, private dialog: MatDialog) {}
+  value1:string;
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router, private dialog: MatDialog) {
+    this.value1= '';
+  }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -55,9 +58,9 @@ export class LoginComponent implements OnInit {
     });
   }
   saveUserNameToLocalStorage(response: any): void {
-    const token = response.token; 
-    const decodedToken: any = jwtDecode(token); 
-    localStorage.setItem('userName', decodedToken.userName); 
+    const token = response.token;
+    const decodedToken: any = jwtDecode(token);
+    localStorage.setItem('userName', decodedToken.userName);
     localStorage.setItem('token',token);
   }
   get email() {

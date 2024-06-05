@@ -1,0 +1,70 @@
+/* Stylizacja dla głównego kontenera logowania */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Pełna wysokość okna przeglądarki */
+  background-color: #f5f5f5; /* Jasnoszare tło */
+}
+
+/* Stylizacja dla formularza logowania */
+.login-form {
+  background-color: #fff; /* Białe tło */
+  padding: 20px; /* Wewnętrzne odstępy */
+  border-radius: 8px; /* Zaokrąglone rogi */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Cień dla efektu trójwymiarowości */
+  width: 300px; /* Szerokość formularza */
+}
+
+/* Stylizacja dla nagłówka */
+.login-form h2 {
+  margin-bottom: 20px; /* Dolny odstęp */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  color: #333; /* Kolor tekstu */
+}
+
+/* Stylizacja dla grupy wejściowej */
+.input-group {
+  margin-bottom: 20px; /* Dolny odstęp */
+}
+
+/* Stylizacja dla etykiety */
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: bold;
+}
+
+/* Stylizacja dla pola wejściowego */
+.input-group input {
+  width: calc(100% - 20px); /* Szerokość pola wejściowego */
+  padding: 10px; /* Wewnętrzne odstępy */
+  border: 1px solid #ccc; /* Kolor obramowania */
+  border-radius: 4px; /* Zaokrąglone rogi */
+  box-sizing: border-box; /* Uwzględnienie obramowania i wypełnienia w szerokości i wysokości */
+}
+
+/* Stylizacja dla przycisku logowania */
+.button-group .login-button {
+  width: 100%; /* Szerokość przycisku */
+  padding: 10px; /* Wewnętrzne odstępy */
+  background-color: #007bff; /* Kolor tła */
+  color: #fff; /* Kolor tekstu */
+  border: none; /* Bez obramowania */
+  border-radius: 4px; /* Zaokrąglone rogi */
+  cursor: pointer; /* Kursor w postaci dłoni */
+  font-size: 16px; /* Rozmiar czcionki */
+}
+
+/* Efekt hover dla przycisku logowania */
+.button-group .login-button:hover {
+  background-color: #0056b3; /* Ciemniejszy kolor tła */
+}
+
+/* Stylizacja dla komunikatów o błędach */
+.error-message {
+  color: #d9534f; /* Czerwony kolor tekstu */
+  font-size: 14px; /* Rozmiar czcionki */
+  margin-top: 5px; /* Górny odstęp */
+}

@@ -33,10 +33,11 @@ import { RegisterComponent } from './components/register/register.component';
 import { MessageDialogComponent } from './components/message-dialog/message-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './components/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { ConfirmDeleteDialogComponent } from './components/message-dialog/confirm-delete-dialog.component';
 import { AuthGuard } from './guards/auth.guard';
+import {InputTextModule} from "primeng/inputtext";
 
 @NgModule({
   declarations: [
@@ -72,7 +73,9 @@ import { AuthGuard } from './guards/auth.guard';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    InputTextModule,
+    FormsModule
   ],
   providers: [CartService, StoreService,AuthGuard],
   bootstrap: [AppComponent],

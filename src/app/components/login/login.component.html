@@ -11,6 +11,10 @@
             <div *ngIf="email?.errors?.['required']">email is required.</div>
             <div *ngIf="email?.errors?.['minlength']">Name must be at least 3 characters long.</div>
         </div>
+          <span class="p-float-label">
+            <input type="text" id="inputtext" pInputText [(ngModel)]="value1">
+            <label for="inputtext">InputText</label>
+        </span>
         </div>
         <div class="input-group">
           <label for="password">Password</label>
@@ -20,9 +24,8 @@
         </div>
         </div>
         <div class="button-group">
-          <button type="submit">Login</button>
+          <button class="login-button" type="submit">Login</button>
         </div>
       </form>
     </div>
   </div>
-  
