@@ -40,6 +40,7 @@ import { AuthGuard } from './guards/auth.guard';
 import {InputTextModule} from "primeng/inputtext";
 import {PasswordModule} from "primeng/password";
 import {ButtonModule} from "primeng/button";
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import {ButtonModule} from "primeng/button";
     ConfirmDeleteDialogComponent,
     LoginComponent,
     EditProfileComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
