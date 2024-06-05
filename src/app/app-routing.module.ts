@@ -6,6 +6,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { AuthGuard } from './guards/auth.guard';
+import {CheckoutComponent} from "./components/checkout/checkout.component";
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'edit',
     component: EditProfileComponent, canActivate: [AuthGuard]
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,canActivate: [AuthGuard]
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];

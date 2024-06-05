@@ -1,1 +1,36 @@
-<p>checkout works!</p>
+<!-- checkout.component.html -->
+<div class="container">
+<div class="checkout-container">
+  <h2>Checkout</h2>
+
+
+  <div class="checkout-summary">
+    <h3>Order Summary</h3>
+    <ul>
+      <li *ngFor="let item of cartItems">{{ item.name }} - {{ item.price }}</li>
+    </ul>
+    <p>Total: {{ calculateTotal() }}</p>
+  </div>
+
+  <div class="checkout-payment">
+    <h3>Payment</h3>
+    <form (ngSubmit)="submitPaymentForm()" #paymentForm="ngForm">
+      <div class="form-group">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" name="cardNumber" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="expiryDate">Expiry Date</label>
+        <input type="text" id="expiryDate" name="expiryDate" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" name="cvv" ngModel required>
+      </div>
+      <div class="button-group">
+      <button class="checkout-button" type="submit" [disabled]="paymentForm.invalid">Pay Now</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>

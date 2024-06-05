@@ -25,10 +25,10 @@ export class HeaderComponent implements OnInit {
       .map((item) => item.quantity)
       .reduce((prev, current) => prev + current, 0);
   }
-  
+
 
   userName?: string;
-  
+
   constructor(
     private cartService: CartService,
     private authService: AuthService,
@@ -36,7 +36,7 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-  
+
   }
 
   getTotal(items: CartItem[]): number {
@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
 
   onLogout(): void {
     this.authService.logout();
-    if (this.router.url !== '/edit') {
+    if (this.router.url !== '/edit' && this.router.url !== '/checkout') {
       this.router.navigate([this.router.url]);
     } else {
       this.router.navigate(['/home']);
@@ -62,9 +62,9 @@ export class HeaderComponent implements OnInit {
   getUserName(): string | null {
     return localStorage.getItem('userName');
   }
- 
+
   getisLoggedIn() {
     return localStorage.getItem('token');
   }
-  
+
 }

@@ -1,16 +1,17 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Cart, CartItem } from 'src/app/models/cart.model';
-import { CartService } from 'src/app/services/cart.service';
-import { loadStripe } from '@stripe/stripe-js';
-import { Subscription } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Cart, CartItem} from 'src/app/models/cart.model';
+import {CartService} from 'src/app/services/cart.service';
+import {loadStripe} from '@stripe/stripe-js';
+import {Subscription} from 'rxjs';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
 })
 export class CartComponent implements OnInit, OnDestroy {
-  cart: Cart = { items: [] };
+  cart: Cart = {items: []};
   displayedColumns: string[] = [
     'product',
     'name',
@@ -22,7 +23,8 @@ export class CartComponent implements OnInit, OnDestroy {
   dataSource: CartItem[] = [];
   cartSubscription: Subscription | undefined;
 
-  constructor(private cartService: CartService, private http: HttpClient) {}
+  constructor(private cartService: CartService, private http: HttpClient, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.cartSubscription = this.cartService.cart.subscribe((_cart: Cart) => {
@@ -52,15 +54,21 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   onCheckout(): void {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      this.router.navigate(['/login']);
+      return;
+    }
+    else {
+      this.router.navigate(['/checkout']);
+    }
     this.http
       .post('http://localhost:4242/checkout', {
         items: this.cart.items,
       })
       .subscribe(async (res: any) => {
         let stripe = await loadStripe('your token');
-        stripe?.redirectToCheckout({
-          sessionId: res.id,
-        });
+        this.router.navigate(['/checkout']);
       });
   }
 
