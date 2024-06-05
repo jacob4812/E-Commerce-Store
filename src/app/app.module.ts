@@ -38,7 +38,9 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 import { ConfirmDeleteDialogComponent } from './components/message-dialog/confirm-delete-dialog.component';
 import { AuthGuard } from './guards/auth.guard';
 import {InputTextModule} from "primeng/inputtext";
-
+import {PasswordModule} from "primeng/password";
+import {ButtonModule} from "primeng/button";
+import { FloatLabelModule } from 'primeng/floatlabel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +77,10 @@ import {InputTextModule} from "primeng/inputtext";
     ReactiveFormsModule,
     MatDialogModule,
     InputTextModule,
-    FormsModule
+    FormsModule,
+    PasswordModule,
+    ButtonModule,
+    FloatLabelModule,
   ],
   providers: [CartService, StoreService,AuthGuard],
   bootstrap: [AppComponent],

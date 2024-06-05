@@ -18,9 +18,10 @@ import { jwtDecode } from 'jwt-decode';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   errorMessage: string | null = null;
-  value1:string;
+  value1: any;
+  value11: any;
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router, private dialog: MatDialog) {
-    this.value1= '';
+
   }
 
   ngOnInit(): void {

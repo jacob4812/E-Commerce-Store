@@ -4,17 +4,13 @@
     <div class="login-form">
       <h2>Login</h2>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <div class="input-group">
+        <div class="p-float-label">
           <label for="email">Email</label>
-          <input type="email" id="email" formControlName="email" placeholder="Enter your email">
+          <input type="email" id="email" pInputText [(ngModel)]="value1" formControlName="email" placeholder="Enter your email">
           <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error-message">
             <div *ngIf="email?.errors?.['required']">email is required.</div>
             <div *ngIf="email?.errors?.['minlength']">Name must be at least 3 characters long.</div>
         </div>
-          <span class="p-float-label">
-            <input type="text" id="inputtext" pInputText [(ngModel)]="value1">
-            <label for="inputtext">InputText</label>
-        </span>
         </div>
         <div class="input-group">
           <label for="password">Password</label>
@@ -22,6 +18,12 @@
           <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error-message">
             <div *ngIf="password?.errors?.['required']">Password is required.</div>
         </div>
+          <div class="field col-12 md:col-4">
+        <span class="p-float-label">
+            <label for="password">Password</label>
+            <p-password inputId="password" [(ngModel)]="value11"></p-password>
+        </span>
+          </div>
         </div>
         <div class="button-group">
           <button class="login-button" type="submit">Login</button>
