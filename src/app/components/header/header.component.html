@@ -1,7 +1,7 @@
-<mat-toolbar class="justify-between max-w-7xl mx-auto border-x">
+<mat-toolbar class="justify-between max-7xl mx-auto border-x">
   <a routerLink="home">E-commerce Shop</a>
   <div class="flex items-center">
-  
+
     <button mat-icon-button [matMenuTriggerFor]="cartMenu">
       <mat-icon
         [matBadge]="itemsQuantity"
@@ -10,13 +10,13 @@
       >shopping_cart</mat-icon>
     </button>
 
-  
+
     <button mat-icon-button [matMenuTriggerFor]="userMenu">
       <mat-icon>account_circle</mat-icon>
     </button>
   </div>
 
-  
+
   <mat-menu #cartMenu="matMenu">
     <div class="p-3 divide-y divide-solid">
       <div class="pb-3 flex justify-between">
@@ -77,7 +77,7 @@
         <button mat-menu-item class="logout" routerLink="register">
           <mat-icon class="afterlogout">person_add</mat-icon>
           Register
-          
+
         </button>
       </div>
     </ng-template>

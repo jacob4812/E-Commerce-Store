@@ -8,6 +8,7 @@ import { MessageDialogComponent } from '../message-dialog/message-dialog.compone
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
@@ -52,7 +53,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
- 
+
   get name() {
     return this.registerForm.get('name');
   }

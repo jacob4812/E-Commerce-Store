@@ -1,34 +1,29 @@
-/* Stylizacja dla głównego kontenera logowania */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Pełna wysokość okna przeglądarki */
-  background-color: #f5f5f5; /* Jasnoszare tło */
+  height: 22rem;
 }
 
-/* Stylizacja dla formularza logowania */
 .login-form {
-  background-color: #fff; /* Białe tło */
-  padding: 20px; /* Wewnętrzne odstępy */
-  border-radius: 8px; /* Zaokrąglone rogi */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Cień dla efektu trójwymiarowości */
-  width: 300px; /* Szerokość formularza */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 40rem;
 }
 
-/* Stylizacja dla nagłówka */
 .login-form h2 {
-  margin-bottom: 20px; /* Dolny odstęp */
-  text-align: center; /* Wyśrodkowanie tekstu */
-  color: #333; /* Kolor tekstu */
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
 }
 
-/* Stylizacja dla grupy wejściowej */
 .input-group {
-  margin-bottom: 20px; /* Dolny odstęp */
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
-/* Stylizacja dla etykiety */
 .input-group label {
   display: block;
   margin-bottom: 5px;
@@ -36,42 +31,44 @@
   font-weight: bold;
 }
 
-/* Stylizacja dla pola wejściowego */
 .input-group input {
-  width: calc(100% - 20px); /* Szerokość pola wejściowego */
-  padding: 10px; /* Wewnętrzne odstępy */
-  border: 1px solid #ccc; /* Kolor obramowania */
-  border-radius: 4px; /* Zaokrąglone rogi */
-  box-sizing: border-box; /* Uwzględnienie obramowania i wypełnienia w szerokości i wysokości */
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-/* Stylizacja dla przycisku logowania */
+.button-group {
+  display: flex;
+  justify-content: center;
+}
+
 .button-group .login-button {
-  width: 100%; /* Szerokość przycisku */
-  padding: 10px; /* Wewnętrzne odstępy */
-  background-color: #007bff; /* Kolor tła */
-  color: #fff; /* Kolor tekstu */
-  border: none; /* Bez obramowania */
-  border-radius: 4px; /* Zaokrąglone rogi */
-  cursor: pointer; /* Kursor w postaci dłoni */
-  font-size: 16px; /* Rozmiar czcionki */
+  width: 11rem;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-/* Efekt hover dla przycisku logowania */
 .button-group .login-button:hover {
-  background-color: #0056b3; /* Ciemniejszy kolor tła */
+  background-color: #0056b3;
 }
 
-/* Stylizacja dla komunikatów o błędach */
 .error-message {
-  color: #d9534f; /* Czerwony kolor tekstu */
-  font-size: 14px; /* Rozmiar czcionki */
-  margin-top: 5px; /* Górny odstęp */
+  color: #d9534f;
+  font-size: 16px;
+  margin-top: 5px;
 }
-input#password{
-  width: calc(100% - 20px); /* Szerokość pola wejściowego */
-  padding: 10px; /* Wewnętrzne odstępy */
-  border: 1px solid #ccc; /* Kolor obramowania */
-  border-radius: 4px; /* Zaokrąglone rogi */
+
+input#password {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   box-sizing: border-box;
 }

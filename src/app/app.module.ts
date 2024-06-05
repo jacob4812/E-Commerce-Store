@@ -40,7 +40,7 @@ import { AuthGuard } from './guards/auth.guard';
 import {InputTextModule} from "primeng/inputtext";
 import {PasswordModule} from "primeng/password";
 import {ButtonModule} from "primeng/button";
-import { FloatLabelModule } from 'primeng/floatlabel';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,7 +80,7 @@ import { FloatLabelModule } from 'primeng/floatlabel';
     FormsModule,
     PasswordModule,
     ButtonModule,
-    FloatLabelModule,
+
   ],
   providers: [CartService, StoreService,AuthGuard],
   bootstrap: [AppComponent],
